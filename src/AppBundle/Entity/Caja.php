@@ -121,6 +121,12 @@ class Caja
         return $this;
     }
 
+    public function setVolumen(Caja $caja)
+    {
+        $this->volumen = $caja->getAltura() * $caja->getLongitud() * $caja->getProfundidad();
+        return $this;
+    }
+
     public function getProfundidad()
     {
         return $this->profundidad;
