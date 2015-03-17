@@ -58,9 +58,19 @@ class Categoria
      */
     protected $cajas;
 
+    /**
+     * Relación ManyToMany Secciones-Categorias.
+     *
+     * @var Doctrine\Common\Collections\Collection
+     *
+     * @ORM\ManyToMany(targetEntity="Seccion", mappedBy="categorias")
+     */
+    protected $secciones;
+
     public function __construct()
     {
         $this->cajas = new ArrayCollection();
+        $this->secciones = new ArrayCollection();
     }
 
     public function getId()
