@@ -10,3 +10,13 @@ services:
             # dispatcher: "@event_dispatcher"
             em: "@doctrine.orm.entity_manager"
             class: AppBundle\Entity\Seccion
+    app.manager.caja:
+        class: AppBundle\Manager\CajaManager
+        arguments:
+            # dispatcher: "@event_dispatcher"
+            em: "@doctrine.orm.entity_manager"
+            class: AppBundle\Entity\Caja
+    volume.loader.listener:
+        class: AppBundle\Listener\VolumeLoader
+        tags:
+            - { name: doctrine.event_listener, event: postPersist }
