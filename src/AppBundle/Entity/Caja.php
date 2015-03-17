@@ -53,7 +53,7 @@ class Caja
      *
      * @var integer
      *
-     * @ORM\Column(type="integer")
+     * @ORM\Column(type="decimal", precision=19, scale=2, nullable=true)
      */
     protected $volumen;
 
@@ -92,5 +92,50 @@ class Caja
     public function getId()
     {
         return $this->id;
+    }
+
+    public function getCategoria()
+    {
+        return $this->categoria;
+    }
+
+    public function getAltura()
+    {
+        return $this->altura;
+    }
+
+    public function setAltura($altura)
+    {
+        $this->altura = $altura;
+        return $this;
+    }
+
+    public function getLongitud()
+    {
+        return $this->longitud;
+    }
+
+    public function setLongitud($longitud)
+    {
+        $this->longitud = $longitud;
+        return $this;
+    }
+
+    public function getProfundidad()
+    {
+        return $this->profundidad;
+    }
+
+    public function setProfundidad($profundidad)
+    {
+        $this->profundidad = $profundidad;
+        return $this;
+    }
+
+    public function setCategoria(\AppBundle\Entity\Categoria $categoria = null)
+    {
+        $this->categoria = $categoria;
+
+        return $this;
     }
 }
