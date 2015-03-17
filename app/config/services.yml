@@ -4,6 +4,9 @@ parameters:
 #    parameter_name: value
 
 services:
-#    service_name:
-#        class: AppBundle\Directory\ClassName
-#        arguments: ["@another_service_name", "plain_value", "%parameter_name%"]
+    app.manager.seccion:
+        class: AppBundle\Manager\SeccionManager
+        arguments:
+            # dispatcher: "@event_dispatcher"
+            em: "@doctrine.orm.entity_manager"
+            class: AppBundle\Entity\Seccion
