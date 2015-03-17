@@ -27,7 +27,7 @@ class Categoria
      *
      * @var integer
      *
-     * @ORM\Column(type="integer")
+     * @ORM\Column(type="string")
      * @Assert\NotBlank()
      */
     protected $nombre;
@@ -77,5 +77,10 @@ class Categoria
     public function getId()
     {
         return $this->id;
+    }
+
+    public function getNombre()
+    {
+        return $this->nombre;
     }
 }
