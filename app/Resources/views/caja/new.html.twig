@@ -1,0 +1,22 @@
+<html>
+<body>
+{% block body %}
+    {{ form_start(form) }}
+    <fieldset>
+            <div class="form-group">
+                {{ form_label(form.categoria) }}
+                {{ form_widget(form.categoria) }}
+                {{ form_label(form.altura) }}
+                {{ form_widget(form.altura) }}
+                {{ form_label(form.longitud) }}
+                {{ form_widget(form.longitud) }}
+                {{ form_label(form.profundidad) }}
+                {{ form_widget(form.profundidad) }}
+            </div>
+    </fieldset>
+
+    <input type="submit" value="Guardar" />
+    {{ form_end(form) }}
+{% endblock %}
+</body>
+</html>
