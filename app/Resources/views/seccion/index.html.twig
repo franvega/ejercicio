@@ -1,0 +1,18 @@
+{% block body %}
+    {% for seccion in secciones %}
+    	<tr>
+    		<td>
+    			{{ seccion.id}}
+    		</td>
+    		<td>
+    			{{ seccion.nombre}}
+    		</td>
+    		<td>
+    			Editar
+    		</td>
+    		 <td>
+    			Borrar
+    		</td>
+    	</tr>
+    {% endfor %}
+{% endblock %}
