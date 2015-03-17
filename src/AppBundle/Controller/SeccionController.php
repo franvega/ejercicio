@@ -5,7 +5,6 @@ namespace AppBundle\Controller;
 use AppBundle\Entity\Seccion;
 use AppBundle\Form\Type\SeccionType;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
-use Sensio\Bundle\FrameworkExtraBundle\Configuration\Template;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
@@ -34,14 +33,14 @@ class SeccionController extends Controller
      */
     public function newAction(Request $request)
     {
-        $seccion_manager = $this->container->get('app.manager.seccion');
-        $seccion = $seccion_manager->createSeccion();
+        $seccionManager = $this->container->get('app.manager.seccion');
+        $seccion = $seccionManager->createSeccion();
 
         $form = $this->createForm(new SeccionType(), $seccion);
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
-            $seccion_manager->saveSeccion($seccion);
+            $seccionManager->saveSeccion($seccion);
 
             $this->addFlash(
                 'notice',
@@ -65,8 +64,8 @@ class SeccionController extends Controller
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
-            $seccion_manager = $this->container->get('app.manager.seccion');
-            $seccion_manager->updateSeccion($seccion);
+            $seccionManager = $this->container->get('app.manager.seccion');
+            $seccionManager->updateSeccion($seccion);
         }
 
         return $this->render(
